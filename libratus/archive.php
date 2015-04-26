@@ -123,7 +123,7 @@ include ('inc-header.php'); ?>
 					</div>
 					<?php } ?>
 					
-					<?php if ($zenpage && ZP_NEWS_ENABLED) { ?>
+					<?php if ($zenpage) { ?>
 					<?php if ((getNumNews(true) > 0) && (getOption('libratus_date_news'))) { ?>
 					<div class="block archive">	
 						<h5><i class="fa fa-newspaper-o fa-fw"></i> <?php echo gettext('News Archive'); ?></h5>
