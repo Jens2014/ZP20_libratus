@@ -22,7 +22,7 @@ $(document).ready(function(){
 	$('.swipebox').swipebox({hideBarsOnMobile : false});
 	
 	$('.gallery-thumbs').justifiedGallery({
-		rowHeight : 120,
+		rowHeight : 160,
 		lastRow : 'nojustify',
 		cssAnimation : true,
 		margins : 20

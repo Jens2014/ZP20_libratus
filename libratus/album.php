@@ -36,14 +36,14 @@
 									} ?>
 								</div>
 								<?php if (getOption('libratus_date_albums')) { ?><div class="album-date"><?php printAlbumDate(); ?></div><?php } ?>
-								<h3 class="album-title"><?php printBareAlbumTitle();?></h3>
+								<h3 class="album-title nowrap"><?php '--'.printAlbumTitle();?></h3>
 							</div>
 							<i class="fa fa-angle-up mobile-click-details"></i>
 						</div>	
 						<?php endwhile; ?>
 					</div>
 					
-					<div class="gallery-thumbs-large">
+					<div class="gallery-thumbs">
 						<?php 
 						$gmap_c = 0;
 						while (next_image()): 
@@ -83,6 +83,7 @@
 								<div class="image-cr"><i class="fa fa-star"></i><span> <?php echo getRating($_zp_current_image); ?></span></div>
 								<?php } 
 								} ?>
+                                                                <h3 class="album-title nowrap"><?php printBareImageTitle(10);?></h3>
 							</div>
 							<i class="fa fa-angle-up mobile-click-details"></i>
 						</div>
