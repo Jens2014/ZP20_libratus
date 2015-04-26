@@ -94,10 +94,3 @@
 		</div>
 		
 <?php include ('inc-footer.php'); ?>
-<script src="<?php FULLWEBPATH ?>/myprojects/gallery/cookiechoices.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function(event) {
-    cookieChoices.showCookieConsentBar('Diese Seite verwendet Cookies. This site uses cookies.',
-      'Annehmen/Accept', 'Cookie Information', 'http://ralf-kerkhoff.de/seiten/datenschutz#cookies');
-  });
-</script>
