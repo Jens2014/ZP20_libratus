@@ -74,7 +74,7 @@ body {
 #gal-desc{display:none;position:absolute;width:100%;bottom:0;left:0;background-image:linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.50));}
 #gal-desc div.inner > div{max-width:800px;font-size:120%;font-style:italic;color:#fff;padding-right:120px;}
 #gal-desc div.inner > div p:last-child{margin-bottom:0;}
-#logo-text{display:block;color:#fff;padding:20px 0;}
+#logo-text{display:block;color:#fff;padding:20px 0;font-weight: 400;text-shadow: 2px 2px 5px #000;}
 
 #ss-noshow #home-bar{position:relative;width:100%;}
 #ss-noshow #gal-desc-wrap{display:none;}
