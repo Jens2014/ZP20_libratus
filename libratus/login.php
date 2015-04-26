@@ -20,6 +20,9 @@
 			<div class="inner">
 				<div class="page pad loginout">
                                     <?php printUserLogin_out(gettext("You are successfully logged in. Now you can enjoy the full capability of this site.") . '<br><br>','',true); ?>
+                                    <?php if(zp_loggedin()) {?>
+                                    <br><br><h5 id="favorites-title"><i class="fa fa-star"></i> <?php echo gettext('Favorites'); ?></h5>
+                                        <?php printFavoritesURL(null,'','','');} ?>
 				</div>
 
 				<div class="page-sidebar pad">

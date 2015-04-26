@@ -362,15 +362,16 @@ ul.flags{margin:5px 0 10px;}
 
 #rating,#favorites-box{
 	max-width:100%;
-	padding:15px;
-	border:1px solid #e1e1e1;
-	background:#f0f0f0;
-	margin-bottom:20px;
 }
 #rating .button,#favorites-box .button{background:#fff;}
 #rating .button{margin-left:15px;}
 #favorites-box form{margin:0;}
 .favorite_link{display:block;}
+#favorites-box form .button{
+    display: inline-block;
+    padding: 0 10px;
+    width: 48%;
+}
 
 /* ---- Archive Page ---- */
 .block.archive{margin-bottom:20px;}
@@ -571,3 +572,24 @@ ul.month li{font-weight:normal;line-height:1.6;}
     right: 40px;
     top: 33px;
 }
+
+.gallery-thumbs .caption form,.gallery-thumbs-large .caption form {
+    margin-bottom: 0;
+}
+
+.gallery-thumbs .caption form input[type=submit],.gallery-thumbs-large .caption form input[type=submit]{
+    background-color: #000;
+    border: 2px solid #1eaedb;
+    color: #1eaedb;
+    font-weight: 900;
+    opacity: 1;
+}
+
+.gallery-thumbs .caption form input[type=submit]:hover,.gallery-thumbs-large .caption form input[type=submit]:hover{
+    background-color: #000;
+    border: 2px solid #1eaedb;
+    color: #1eaedb;
+    font-weight: 900;
+    opacity: 1;
+}
+

@@ -9,7 +9,7 @@ class ThemeOptions {
 		setThemeOption('albums_per_row',3,null,'libratus');
 		setThemeOption('images_per_row',6,null,'libratus');
 		setThemeOption('image_use_side','longest',null,'libratus');
-		setThemeOption('image_size', 800, null, 'libratus');
+		setThemeOption('image_size', 1024, null, 'libratus');
 		setThemeOption('image_use_side', 'longest', null, 'libratus');
 		setThemeOption('thumb_size', 300, null, 'libratus');
 		// set core theme option defaults
@@ -17,7 +17,7 @@ class ThemeOptions {
 		setThemeOptionDefault('images_per_page',30); 
 		setThemeOptionDefault('thumb_crop',false); 
 		// set libratus option defaults
-		setThemeOptionDefault('libratus_maxwidth', '1400');
+		setThemeOptionDefault('libratus_maxwidth', '1600');
 		setThemeOptionDefault('libratus_ss_type', 'random');
 		setThemeOptionDefault('libratus_ss_album', '');
 		setThemeOptionDefault('libratus_ss_interval', 5000);

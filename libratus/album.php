@@ -89,7 +89,6 @@
 						</div>
 						<?php endwhile; ?>
 					</div>
-				
 					<?php if (hasNextPage() || hasPrevPage()) { ?><div class="pad"><hr /><?php printPageListWithNav('« '.gettext('prev'),gettext('next').' »',false,true,'pagination'); ?></div><?php } ?>
 				</div>
 				
@@ -128,8 +127,14 @@
 					<?php if ($_zp_gallery_page == 'album.php') {
 					if ((class_exists('RSS')) && (getOption('RSS_album_image'))) { ?>
 					<div><i class="fa fa-rss fa-fw"></i> <?php printRSSLink('Collection','',gettext('Album RSS'),'',false); ?></div>
-					<?php } 
-					if (getOption('libratus_social')) include ('inc-socialshare.php');
+                                        <?php } ?>
+                                                                                
+                                        <?php if (function_exists('printAddToFavorites')) { ?>
+                                            <hr>
+                                            <?php include ('inc-favorites.php');?>
+                                        <?php } ?>
+                                                                                
+					<?php if (getOption('libratus_social')) include ('inc-socialshare.php');
 					} ?>
 					
 					<?php printCodeblock(); ?>
@@ -138,7 +143,6 @@
 					if (function_exists('printRating') && $_zp_gallery_page != 'favorites.php') { ?>
 					<div id="rating" class="block"><?php printRating(); ?></div>
 					<?php } 
-					if (function_exists('printAddToFavorites')) include ('inc-favorites.php');
 					} ?>
 					
 				</div>
@@ -164,9 +168,7 @@
 				<div class="comments-sidebar pad">
 					<?php if (function_exists('printRating')) { ?>
 					<div id="rating" class="block"><?php printRating(); ?></div>
-					<?php } 
-					if (function_exists('printAddToFavorites')) include ('inc-favorites.php');
-					?>
+					<?php } ?>
 				</div>
 				<div class="comments-main pad">
 					<?php if (function_exists('printCommentForm')) printCommentForm(); ?>
@@ -212,4 +214,4 @@
 		<?php }
 		} ?>
 		
-<?php include ('inc-footer.php'); ?>	
+<?php include ('inc-footer.php'); ?>

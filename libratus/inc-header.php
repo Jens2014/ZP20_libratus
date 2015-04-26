@@ -13,12 +13,17 @@ setOption('flag_thumbnail_locked_text','<i title="'.gettext("Protected").'" clas
 setOption('flag_thumbnail_unpublished_text','<span title="'.gettext("Unpublished").'" class="fa-stack"><i class="fa fa-circle fa-stack-1x fa-fw"></i><i class="fa fa-exclamation-circle fa-stack-1x fa-fw red"></i></span>',false);
 
 $quickmenu = '<div id="quickmenu">';
-$quickmenu .= '<a id="nav-icon" class="quick-menu menu-btn"><i class="fa fa-bars fa-lg"></i></a>';
+$quickmenu .= '<a id="nav-icon" class="quick-menu menu-btn" title="'.gettext('Menu').'"><i class="fa fa-bars fa-lg"></i></a>';
 $quickmenu .= '<a id="search-icon" class="quick-menu" href="'.getCustomPageURL('archive').'" title="'.gettext('Archive/Search').'"><i class="fa fa-search fa-lg"></i></a>';
 //--JKP
 $quickmenu .= '<a id="scrolldown" class="quick-menu scrolldown" title="'.gettext('Scroll to bottom').'" style="display: inline !important;"><i class="fa fa-chevron-circle-down fa-lg"></i></a>';
 //--JKP END
 $quickmenu .= '<a id="scrollup" class="quick-menu scrollup" title="'.gettext('Scroll to top').'"><i class="fa fa-chevron-circle-up fa-lg"></i></a>';
+
+if(zp_loggedin()) {
+    $quickmenu .= '<a id="favorites-icon" class="quick-menu" href="'.getCustomPageURL('favorites').'" title="'.gettext('Favorites').'"><i class="fa fa-star fa-lg"></i></a>';
+}
+
 $quickmenu .= '</div>';
 
 if ($_zp_current_album && $_zp_gallery_page != 'favorites.php' && $_zp_gallery_page != '404.php') {

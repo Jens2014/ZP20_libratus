@@ -25,7 +25,6 @@
 					</div><br />
 					<?php } 
 					} ?>
-					
 					<?php printFavoritesURL(null,'','',''); ?>	
 				</div>
 				<?php } ?>

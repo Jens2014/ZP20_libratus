@@ -56,10 +56,20 @@
 					<?php if (getOption('libratus_date_images')) { ?><div><i class="fa fa-calendar fa-fw"></i> <?php printImageDate(); ?></div><?php } ?>
 					<?php if (getOption('libratus_download')) { ?><div><i class="fa fa-download fa-fw"></i> <a href="<?php echo html_encode(getFullImageURL()); ?>" title="<?php echo gettext('Download'); ?>"><?php echo gettext('Download').' ('.getFullWidth().' x '.getFullHeight().')'; ?></a></div><?php } ?>
 					<?php if (function_exists('printSlideShowLink') && (getNumImages() > 1) && isImagePhoto()) { ?><hr /><div class="slideshow-link"><i class="fa fa-play fa-fw"></i> <?php printSlideShowLink(); ?></div><?php } ?>
-					
+                              
+                                        <?php if (function_exists('printAddToFavorites')) { ?>
+                                            <hr>
+                                            <?php include ('inc-favorites.php');?>
+                                        <?php } ?>
+
 					<?php if (getOption('libratus_social')) include ('inc-socialshare.php'); ?>
+						
+					<?php printCodeblock(); ?>
 					
-					<?php if ((function_exists('printGoogleMap')) || (function_exists('printOpenStreetMap'))) {
+					<?php if (zp_loggedin() && getImageMetaData()) { ?><p><?php printImageMetadata('',false,'imagemetadata'); ?></p><?php } ?>
+
+					<?php if (zp_loggedin()) {
+                                            if ((function_exists('printGoogleMap')) || (function_exists('printOpenStreetMap'))) {
 						if (function_exists('printOpenStreetMap')) {
 							$map = new zpOpenStreetMap();
 							if ($map->getGeoData()) {
@@ -74,17 +84,14 @@
 								printGoogleMap(gettext('Show Google Map'),null,'show'); 
 							}
 						}
+                                            }
 					} ?>
-						
-					<?php printCodeblock(); ?>
 					
-					<?php if (getImageMetaData()) { ?><p><?php printImageMetadata('',false,'imagemetadata'); ?></p><?php } ?>
 					
 					<?php if (!function_exists('printCommentForm')) { ?>
 					<?php if (function_exists('printRating')) { ?>
 					<div id="rating" class="block"><?php printRating(); ?></div>
 					<?php } 
-					if (function_exists('printAddToFavorites')) include ('inc-favorites.php');
 					} ?>
 					
 					
@@ -99,8 +106,7 @@
 				<div class="comments-sidebar pad">
 					<?php if (function_exists('printRating')) { ?>
 					<div id="rating" class="block"><?php printRating(); ?></div>
-					<?php } 
-					if (function_exists('printAddToFavorites')) include ('inc-favorites.php'); ?>
+					<?php } ?>
 				</div>
 				<div class="comments-main pad">
 					<?php printCommentForm(); ?>
