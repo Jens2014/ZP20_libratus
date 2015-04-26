@@ -30,6 +30,7 @@
 				</div>
 
 				<div class="gallery-sidebar pad">
+                                        <?php include ('inc-search.php'); ?>
 					<div class="single-nav">
 						<?php if (hasPrevImage()) { ?>
 						<a class="button prev-link" href="<?php echo html_encode(getPrevImageURL()).'#view'; ?>" title="<?php echo gettext("Previous Image"); ?>"><i class="fa fa-caret-left"></i> <?php echo gettext("Prev Image"); ?></a>

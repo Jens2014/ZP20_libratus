@@ -186,7 +186,7 @@ display:inline-block;
 vertical-align:middle;
 }
 #search_input{
-background: url("../images/magnifying_glass_16x16.png") no-repeat scroll 8px 8px #fff;
+background: url("../images/magnifying_glass_16x16.png") no-repeat scroll 8px 10px #fff;
 width:100%;
 max-width:100%;
 padding:7px;
@@ -204,6 +204,7 @@ margin:0;
 display:inline-block;
 vertical-align:middle;
 opacity:0.5;
+display: none;
 }
 #searchextrashow{
 position:absolute;
@@ -222,7 +223,7 @@ padding:0;
 clear:both;
 list-style:none;
 }
-#searchextrashow label{margin-right:10px;font-weight:normal;width:auto;} /* for space between "within or new" */
+#searchextrashow label{margin-right:10px;margin-bottom:0;font-weight:normal;width:auto;} /* for space between "within or new" */
 #checkall_searchfields{font-weight:bold;}
 #searchextrashow:before{ /* the triangle */
 content:"";
@@ -542,6 +543,6 @@ ul.month li{font-weight:normal;line-height:1.6;}
 
 #searchfields_icon {
     position: absolute;
-    right: 8px;
-    top: 11px;
+    right: 40px;
+    top: 33px;
 }

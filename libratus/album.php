@@ -95,6 +95,7 @@
 				
 				<div class="gallery-sidebar pad">
 					<?php if ($_zp_gallery_page == 'album.php') { ?>
+                                        <?php include ('inc-search.php'); ?>
 					<div class="single-nav">
 						<?php if ($prev = getPrevAlbum()) { ?>
 						<a class="button prev-link" href="<?php echo html_encode(getPrevAlbumURL()); ?>" title="<?php echo gettext('Prev album').': '.html_encode($prev->getTitle()); ?>"><i class="fa fa-caret-left"></i> <?php echo gettext("Prev album"); ?></a>

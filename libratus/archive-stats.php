@@ -118,7 +118,7 @@
 				</div>
 
 				<div class="gallery-sidebar pad">
-					<?php printSearchForm('','search',$_zp_themeroot.'/images/magnifying_glass_16x16.png',gettext('Search gallery'),$_zp_themeroot.'/images/list_12x11.png'); ?>	
+					<?php include ('inc-search.php'); ?>	
 					<hr />
 					<?php include ('inc-archive-stats-menu.php'); ?> 	
 				</div>
