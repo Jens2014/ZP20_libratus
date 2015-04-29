@@ -6,12 +6,12 @@ class ThemeOptions {
 
 	function ThemeOptions() {
 		// force core theme options for this theme
-		setThemeOption('albums_per_row',3,null,'libratus');
-		setThemeOption('images_per_row',6,null,'libratus');
-		setThemeOption('image_use_side','longest',null,'libratus');
-		setThemeOption('image_size', 1024, null, 'libratus');
-		setThemeOption('image_use_side', 'longest', null, 'libratus');
-		setThemeOption('thumb_size', 300, null, 'libratus');
+		setThemeOptionDefault('albums_per_row',3);
+		setThemeOptionDefault('images_per_row',6);
+		setThemeOptionDefault('image_use_side','longest');
+		setThemeOptionDefault('image_size', 1024);
+		setThemeOptionDefault('image_use_side', 'longest');
+		setThemeOptionDefault('thumb_size', 300);
 		// set core theme option defaults
 		setThemeOptionDefault('albums_per_page',15);
 		setThemeOptionDefault('images_per_page',30); 
