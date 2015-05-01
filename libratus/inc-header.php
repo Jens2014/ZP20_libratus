@@ -16,12 +16,13 @@ $quickmenu = '<div id="quickmenu">';
 $quickmenu .= '<a id="nav-icon" class="quick-menu menu-btn" title="'.gettext('Menu').'"><i class="fa fa-bars fa-lg"></i></a>';
 $quickmenu .= '<a id="search-icon" class="quick-menu" href="'.getCustomPageURL('archive').'" title="'.gettext('Archive/Search').'"><i class="fa fa-search fa-lg"></i></a>';
 //--JKP
-$quickmenu .= '<a id="scrolldown" class="quick-menu scrolldown" title="'.gettext('Scroll to bottom').'" style="display: inline !important;"><i class="fa fa-chevron-circle-down fa-lg"></i></a>';
+$quickmenu .= '<a id="scrolldown-icon" class="quick-menu scrolldown" title="'.gettext('Scroll to bottom').'" style="display: inline !important;"><i class="fa fa-chevron-circle-down fa-lg"></i></a>';
 //--JKP END
-$quickmenu .= '<a id="scrollup" class="quick-menu scrollup" title="'.gettext('Scroll to top').'"><i class="fa fa-chevron-circle-up fa-lg"></i></a>';
+$quickmenu .= '<a id="scrollup-icon" class="quick-menu scrollup" title="'.gettext('Scroll to top').'"><i class="fa fa-chevron-circle-up fa-lg"></i></a>';
 
 if(zp_loggedin()) {
     $quickmenu .= '<a id="favorites-icon" class="quick-menu" href="'.getCustomPageURL('favorites').'" title="'.gettext('Favorites').'"><i class="fa fa-star fa-lg"></i></a>';
+    $quickmenu .= '<a id="settings-icon" class="quick-menu" onclick="toggle(\'admin_data\');" title="'.gettext('Admin Toolbox').'"><i class="fa fa-cog fa-lg"></i></a>';
 }
 
 $quickmenu .= '</div>';
