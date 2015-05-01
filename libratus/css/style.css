@@ -568,9 +568,8 @@ ul.month li{font-weight:normal;line-height:1.6;}
 }
 
 #searchfields_icon {
-    position: absolute;
-    right: 40px;
-    top: 33px;
+    position: relative;
+    right: -20px;
 }
 
 .gallery-thumbs .caption form,.gallery-thumbs-large .caption form {
@@ -578,18 +577,21 @@ ul.month li{font-weight:normal;line-height:1.6;}
 }
 
 .gallery-thumbs .caption form input[type=submit],.gallery-thumbs-large .caption form input[type=submit]{
-    background-color: #000;
-    border: 2px solid #1eaedb;
-    color: #1eaedb;
-    font-weight: 900;
-    opacity: 1;
+    border: none;
+    color: #fff;
+    font-size: 1.3333em;
+    margin-bottom: 0;
+    margin-top: -3%;
+    opacity: 0.5;
+    padding: 0 4px 3px 4px;
 }
 
 .gallery-thumbs .caption form input[type=submit]:hover,.gallery-thumbs-large .caption form input[type=submit]:hover{
-    background-color: #000;
-    border: 2px solid #1eaedb;
-    color: #1eaedb;
-    font-weight: 900;
+    border: none;
+    color: #fff !important;
+    font-size: 1.3333em;
+    margin-bottom: 0;
+    margin-top: -3%;
     opacity: 1;
+    padding: 0 4px 3px 4px;
 }
-

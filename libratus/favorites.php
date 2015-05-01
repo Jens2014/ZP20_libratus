@@ -29,7 +29,7 @@
                                                     </a>
                                                     <div class="caption clearfix">
                                                             <div class="album-details">
-                                                            <?php printAddToFavorites($_zp_current_album, '', gettext('Remove')); ?>
+                                                            <?php JKP_printAddToFavorites($_zp_current_album, '', gettext('Remove')); ?>
                                                             </div>
                                                     </div>
                                                     <i class="fa fa-angle-up mobile-click-details"></i>
@@ -80,7 +80,7 @@
 								<div class="image-cr"><i class="fa fa-star"></i><span> <?php echo getRating($_zp_current_image); ?></span></div>
 								<?php } 
 								} ?>
-                                                                <?php printAddToFavorites($_zp_current_image, '', gettext('Remove')); ?>
+                                                                <?php JKP_printAddToFavorites($_zp_current_image, '', gettext('Remove')); ?>
 							</div>
 							<i class="fa fa-angle-up mobile-click-details"></i>
 						</div>

@@ -63,4 +63,94 @@ function JKP_printRandomImage($number = 1, $class = null, $option = 'all', $root
                 echo "</a>";
         } 
 }
+
+function JKP_printAddToFavorites($obj, $add = NULL, $remove = NULL) {
+			global $_myFavorites, $_zp_current_admin_obj, $_zp_gallery_page, $_myFavorites_button_count;
+			if (!zp_loggedin() || $_myFavorites->getOwner() != $_zp_current_admin_obj->getUser() || !is_object($obj) || !$obj->exists) {
+				return;
+			}
+
+			$v = 1;
+			if (is_null($remove)) {
+				$remove = get_language_string(getOption('favorites_remove_button'));
+			}
+			$table = $obj->table;
+			$target = array('type' => $table);
+			if ($_zp_gallery_page == 'favorites.php') {
+                        // only need one remove button since we know the instance
+				$multi = false;
+				$list = array($_myFavorites->instance);
+			} 
+			$seen = array_flip($list);
+			switch ($table) {
+				case 'images':
+					$id = $obj->imagefolder . '/' . $obj->filename;
+					foreach ($list as $instance) {
+						$_myFavorites->instance = $instance;
+						$images = $_myFavorites->getImages(0);
+						$seen[$instance] = false;
+						foreach ($images as $image) {
+							if ($image['folder'] == $obj->imagefolder && $image['filename'] == $obj->filename) {
+								$seen[$instance] = true;
+								JKP_ad_removeButton($obj, $id, 0, $remove, $instance, $multi);
+								break;
+							}
+						}
+					}
+					break;
+				case 'albums':
+					$id = $obj->name;
+					foreach ($list as $instance) {
+						$_myFavorites->instance = $instance;
+						$albums = $_myFavorites->getAlbums(0);
+						$seen[$instance] = false;
+						foreach ($albums as $album) {
+							if ($album == $id) {
+								$seen[$instance] = true;
+								JKP_ad_removeButton($obj, $id, 0, $remove, $instance, $multi);
+								break;
+							}
+						}
+					}
+					break;
+				default:
+                                        //We do not handle these.
+					return;
+			}
+		}
+
+function JKP_ad_removeButton($obj, $id, $v, $add, $instance, $multi) {
+    global $_myFavorites;
+    $table = $obj->table;
+    if ($v) {
+            $tag = '_remove';
+    }
+    if ($instance && $multi) {
+            $add .= '[' . $instance . ']';
+    }
+    ?>
+    <form name="<?php echo $table . $obj->getID(); ?>Favorites_<?php echo $instance . $tag; ?>" class = "<?php echo $table; ?>Favorites<?php echo $tag; ?>"  action = "<?php echo html_encode(getRequestURI()); ?>" method = "post" accept-charset = "UTF-8">
+            <input type = "hidden" name = "addToFavorites" value = "<?php echo $v; ?>" />
+            <input type = "hidden" name = "type" value = "<?php echo html_encode($table); ?>" />
+            <input type = "hidden" name = "id" value = "<?php echo html_encode($id); ?>" />
+            <input type = "submit" class = "fa fa-remove fa-lg" value = "" title = "<?php echo $add; ?>"/>
+            <?php
+            if ($v) {
+                    if ($multi) {
+                            ?>
+                            <span class="tagSuggestContainer">
+                                    <input type="text" name="instance" class="favorite_instance" value="" />
+                            </span>
+                            <?php
+                    }
+            } else {
+                    ?>
+                    <input type="hidden" name="instance" value="<?php echo $_myFavorites->instance; ?>" />
+                    <?php
+            }
+            ?>
+    </form>
+    <?php
+}
+
 ?>
